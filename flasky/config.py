@@ -1,6 +1,6 @@
 
 class Config(object):
-    """ """
+    """ Basic object """
     PROJECT_NAME = 'Flasky'
 
     TEMPLATE_FOLDER = 'flasky/templates'

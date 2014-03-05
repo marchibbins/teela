@@ -3,6 +3,8 @@ class Config(object):
     """ """
     PROJECT_NAME = 'Flasky'
 
+    TEMPLATE_FOLDER = 'flasky/templates'
+
     ADMINS = [
         'marc@marchibbins.com'
     ]

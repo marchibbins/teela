@@ -8,3 +8,7 @@ class Config(object):
     ]
 
     DEBUG = True
+
+    # Flask-cache: http://pythonhosted.org/Flask-Cache/
+    CACHE_TYPE = 'simple'
+    CACHE_DEFAULT_TIMEOUT = 60

@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template
 
-blueprint = Blueprint('frontend', __name__)
+frontend = Blueprint('frontend', __name__)
 
-@blueprint.route('/')
+@frontend.route('/')
 def index():
+    """ """
     return render_template('index.html')

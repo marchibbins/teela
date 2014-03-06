@@ -1,1 +1,1 @@
-from views import blueprint as frontend
+from views import frontend

@@ -1,1 +1,1 @@
-from views import blueprint as api
+from views import api

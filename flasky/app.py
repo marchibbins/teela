@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from config import Config
 
 from extensions import cache
+from api import api
 from frontend import frontend
 
 def init():
@@ -27,6 +28,7 @@ def configure_extensions(app):
 
 def configure_blueprints(app):
     """ Configure blueprints. """
+    app.register_blueprint(api)
     app.register_blueprint(frontend)
 
 def configure_error_handlers(app):

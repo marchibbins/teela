@@ -2,6 +2,10 @@
 
 A [Flask](http://flask.pocoo.org/) bootstrap skeleton.
 
-Run locally with:
+Run with Honcho and Gunicorn:
 
-    $ fab run
+    $ honcho start
+
+Or run locally with Flask's development server:
+
+    $ honcho start -e .env-dev

@@ -7,7 +7,7 @@ from frontend import frontend
 
 def init():
     """ Create a Flask app. """
-    app = Flask(Config.PROJECT_NAME, template_folder=Config.TEMPLATE_FOLDER)
+    app = Flask(__name__)
 
     configure_app(app)
     configure_extensions(app)

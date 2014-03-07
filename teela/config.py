@@ -1,9 +1,9 @@
 
 class Config(object):
     """ Basic object """
-    PROJECT_NAME = 'Flasky'
+    PROJECT_NAME = 'Teela'
 
-    TEMPLATE_FOLDER = 'flasky/templates'
+    TEMPLATE_FOLDER = 'teela/templates'
 
     ADMINS = [
         'marc@marchibbins.com'

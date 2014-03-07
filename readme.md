@@ -1,4 +1,4 @@
-## Flasky
+## Teela
 
 A [Flask](http://flask.pocoo.org/) bootstrap. Run locally with:
 

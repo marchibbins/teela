@@ -1,4 +1,4 @@
-from flasky import init
+from teela import init
 
 app = init()
 

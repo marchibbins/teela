@@ -1,5 +1,7 @@
 ## Teela
 
-A [Flask](http://flask.pocoo.org/) bootstrap. Run locally with:
+A [Flask](http://flask.pocoo.org/) bootstrap skeleton.
 
-    $ python main.py
+Run locally with:
+
+    $ fab run

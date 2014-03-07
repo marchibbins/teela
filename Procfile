@@ -1,1 +1,1 @@
-web: $WEB
+web: fab gunicorn

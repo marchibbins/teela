@@ -8,7 +8,7 @@ def run():
 
 def gunicorn():
     """ Run with Gunicorn server. """
-    local('gunicorn main:app')
+    local('gunicorn run:app')
 
 
 def shell():

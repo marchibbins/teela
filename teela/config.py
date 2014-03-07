@@ -21,6 +21,7 @@ def env_var(key, default=None, required=False):
 class Config(object):
     """ Configure application with envionment variables. """
     DEBUG = env_var('DEBUG', default=False)
+    SERVER_NAME = env_var('SERVER_NAME', required=True)
 
     ADMIN = env_var('ADMIN', required=True)
 

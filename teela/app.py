@@ -5,6 +5,7 @@ from extensions import cache
 from api import api
 from frontend import frontend
 
+
 def init():
     """ Create a Flask app. """
     app = Flask(__name__)
@@ -16,20 +17,24 @@ def init():
 
     return app
 
+
 def configure_app(app):
     """ Configure app with config object. """
     # http://flask.pocoo.org/docs/api/#configuration
     app.config.from_object(Config)
+
 
 def configure_extensions(app):
     """ Configure Flask extensions. """
     # flask-cache
     cache.init_app(app)
 
+
 def configure_blueprints(app):
     """ Configure blueprints. """
     app.register_blueprint(api)
     app.register_blueprint(frontend)
+
 
 def configure_error_handlers(app):
     """ Configure error templates. """

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Welcome to Teela</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="summary">
+        {% block summary %}
+            <h1>It worked!</h1>
+            <h2>Congratulations on your first Teela-powered page.</h2>
+        {% endblock %}
+    </div>
+    <div id="instructions">
+        <p>Get going!</p>
+    </div>
+</body>
+</html>

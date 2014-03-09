@@ -14,3 +14,8 @@ def gunicorn():
 def shell():
     """ Start an interactive shell within application environment. """
     local('python shell.py')
+
+
+def test():
+    """ Run tests. """
+    local('python test.py')

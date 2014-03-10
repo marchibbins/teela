@@ -16,9 +16,9 @@ A [Flask](http://flask.pocoo.org/) bootstrap and application skeleton with [twel
 
         $ pip install -r requirements.txt
 
-2. Run with Honcho
+2. Run with Fabric
 
-        $ honcho start
+        $ fab run
 
 ### Application and environment configuration
 
@@ -26,15 +26,13 @@ Honcho adds the contents of `.env` file as environment variables. The applicatio
 
 **Note:** Defaults are defined in [the config class](teela/config.py) for some settings, so you don't need to duplicate these in your `.env` if you want to keep it minimal. Currently `SERVER_NAME` is the only requirement, which is used to determine the application `HOST` and `PORT`.
 
-### Using procfiles
+### Running locally
 
-Honcho will use the main `Procfile` to run the application, which uses Gunicorn. Locally you can use `Procfile.dev` which runs Flask's development server. Set `DEBUG=True` in your `.env` file to auto-reload with code changes.
+To run with Flask's development server, use:
 
-Specify a specific procile as follows:
+    $ fab dev
 
-    $ honcho start -f Procfile.dev
-
-Really this file is just present as an example, you only need one procfile per environment.
+Set `DEBUG=True` in your `.env` file to auto-reload with code changes. See the [fabfile](fabfile.py) for other commands.
 
 #### See also:
 

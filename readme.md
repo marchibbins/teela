@@ -36,6 +36,7 @@ Set `DEBUG=True` in your `.env` file to auto-reload with code changes. See the [
 
 #### See also:
 
+- [Flask wiki](https://github.com/mitsuhiko/flask/wiki/Large-app-how-to), [Flask-skeleton](https://github.com/sean-/flask-skeleton) and [Fbone](https://github.com/imwilsonxu/fbone) for inspiration
 - [The Twelve-Factor App](http://www.12factor.net/)
 - [Declaring and Scaling Process Types with Procfile](https://devcenter.heroku.com/articles/procfile)
 - [Dana](https://github.com/marchibbins/dana) - Twelve-Factor Django application

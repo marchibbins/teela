@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from config import Config
 
-from extensions import cache
+from extensions import cache, db
 from api import api
 from frontend import frontend
 
@@ -28,6 +28,9 @@ def configure_extensions(app):
     """ Configure Flask extensions. """
     # flask-cache
     cache.init_app(app)
+
+    # flask-sqlalchemy
+    db.init_app(app)
 
 
 def configure_blueprints(app):

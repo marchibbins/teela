@@ -11,6 +11,11 @@ def dev():
     local('honcho run python manage.py run')
 
 
+def setup():
+    """ Run with Flask server. """
+    local('honcho run python manage.py setup')
+
+
 def shell():
     """ Start an interactive shell within application environment. """
     local('honcho run python shell.py')

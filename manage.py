@@ -2,7 +2,7 @@ from flask.ext.script import Manager, Shell
 
 from teela import init
 from teela.extensions import db
-from teela.frontend import Message
+from teela.frontend import models
 
 app = init()
 manager = Manager(app)
@@ -20,7 +20,7 @@ def setup():
     db.drop_all()
     db.create_all()
 
-    message = Message(text=u'Hello World.')
+    message = models.Message(text=u'Hello World.')
 
     db.session.add(message)
     db.session.commit()
@@ -28,7 +28,7 @@ def setup():
 
 @manager.shell
 def make_shell_context():
-    return dict(app=app, db=db)
+    return dict(app=app, db=db, models=models)
 
 
 if __name__ == "__main__":

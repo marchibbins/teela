@@ -1,4 +1,4 @@
-from extensions import db
+from teela.extensions import db
 from sqlalchemy import Column
 
 

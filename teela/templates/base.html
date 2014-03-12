@@ -13,8 +13,10 @@
             <h2>Congratulations on your first Teela-powered page.</h2>
         {% endblock %}
     </div>
-    <div id="instructions">
-        <p>Get going!</p>
+    <div id="message">
+        {% block content %}
+            <p>Get going!</p>
+        {% endblock %}
     </div>
 </body>
 </html>

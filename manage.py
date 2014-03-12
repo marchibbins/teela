@@ -2,7 +2,7 @@ from flask.ext.script import Manager
 
 from teela import init
 from teela.extensions import db
-from teela.models import Message
+from teela.frontend import Message
 
 app = init()
 manager = Manager(app)

@@ -16,7 +16,7 @@ def run():
 
 @manager.command
 def setup():
-    """ Init database. """
+    """ Init database and test message. """
     db.drop_all()
     db.create_all()
 

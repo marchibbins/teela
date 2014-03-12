@@ -18,7 +18,7 @@ def setup():
 
 def shell():
     """ Start an interactive shell within application environment. """
-    local('honcho run python shell.py')
+    local('honcho run python manage.py shell')
 
 
 def test():

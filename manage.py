@@ -1,4 +1,4 @@
-from flask.ext.script import Manager
+from flask.ext.script import Manager, Shell
 
 from teela import init
 from teela.extensions import db
@@ -24,6 +24,11 @@ def setup():
 
     db.session.add(message)
     db.session.commit()
+
+
+@manager.shell
+def make_shell_context():
+    return dict(app=app, db=db)
 
 
 if __name__ == "__main__":

@@ -20,6 +20,7 @@ def setup():
     db.drop_all()
     db.create_all()
 
+    # Example, otherwise required setup only
     message = models.Message(text=u'Hello World.')
 
     db.session.add(message)

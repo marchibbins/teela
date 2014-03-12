@@ -4,3 +4,4 @@ Fabric==1.8.2
 gunicorn==18.0
 honcho==0.5.0
 Flask-SQLAlchemy==1.0
+Flask-Script==0.6.7

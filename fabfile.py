@@ -8,7 +8,7 @@ def run():
 
 def dev():
     """ Run with Flask server. """
-    local('honcho run python run.py')
+    local('honcho run python manage.py run')
 
 
 def shell():

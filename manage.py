@@ -20,7 +20,7 @@ def setup():
     db.drop_all()
     db.create_all()
 
-    message = Message(message=u'Hello World')
+    message = Message(text=u'Hello World.')
 
     db.session.add(message)
     db.session.commit()

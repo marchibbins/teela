@@ -1,4 +1,4 @@
-from run import app
+from manage import app
 import unittest
 
 

@@ -28,6 +28,7 @@ def setup():
 
 @manager.shell
 def make_shell_context():
+    """ Configure shell setup. """
     return dict(app=app, db=db, models=models)
 
 

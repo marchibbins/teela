@@ -4,6 +4,7 @@ from config import Config
 from extensions import cache, db, login_manager
 from api import api
 from frontend import frontend
+from user import User, user
 
 
 def init():
@@ -33,6 +34,11 @@ def configure_extensions(app):
     db.init_app(app)
 
     # flask-login
+    @login_manager.user_loader
+    def get_user(id):
+        return User.query.get(id)
+
+    login_manager.login_view = 'user.login'
     login_manager.setup_app(app)
 
 
@@ -40,6 +46,7 @@ def configure_blueprints(app):
     """ Configure blueprints. """
     app.register_blueprint(api)
     app.register_blueprint(frontend)
+    app.register_blueprint(user)
 
 
 def configure_error_handlers(app):

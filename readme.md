@@ -11,6 +11,7 @@ A [Flask](http://flask.pocoo.org/) bootstrap and application skeleton with [twel
 - [Gunicorn](http://gunicorn.org/) - WSGI HTTP server
 - [Honcho](https://github.com/nickstenning/honcho) - a Python clone of [Foreman](http://ddollar.github.com/foreman/)
 - [Fabric](http://fabfile.org/) - command-line system admin, deployment, remote management
+- [IPython](http://ipython.org/) - interactive shell
 
 ## Getting started
 

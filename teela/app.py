@@ -4,7 +4,7 @@ from config import Config
 from extensions import cache, db, login_manager
 from api import api
 from frontend import frontend
-from user import User, user
+from user import user, user_loader
 
 
 def init():
@@ -35,8 +35,8 @@ def configure_extensions(app):
 
     # flask-login
     @login_manager.user_loader
-    def get_user(id):
-        return User.query.get(id)
+    def load_user(id):
+        return user_loader(id)
 
     login_manager.login_view = 'user.login'
     login_manager.setup_app(app)

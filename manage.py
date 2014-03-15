@@ -26,7 +26,7 @@ def setup():
     db.session.add(message)
 
     # Admin user
-    admin = user_models.User(name=u'admin')
+    admin = user_models.User(username=u'admin', password=u'password')
     db.session.add(admin)
 
     db.session.commit()

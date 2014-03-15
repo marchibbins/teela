@@ -16,7 +16,7 @@ def login():
     form = LoginForm(next=request.args.get('next', None))
 
     if form.validate_on_submit():
-        user, authenticated = User.authenticate(form.name.data)
+        user, authenticated = User.authenticate(form.username.data, form.password.data)
 
         if user and authenticated:
             remember = request.form.get('remember') == 'y'

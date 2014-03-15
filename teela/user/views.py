@@ -3,7 +3,6 @@ from flask.ext.login import confirm_login, current_user, login_required, login_u
 from forms import LoginForm, ReauthForm
 from models import User
 
-
 user = Blueprint('user', __name__, url_prefix='/user')
 
 
@@ -24,9 +23,9 @@ def login():
             if login_user(user, remember=remember):
                 return redirect(form.next.data or url_for('frontend.index'))
             else:
-                pass  # Login failed, e.g. inactive user
+                form.non_field_errors = [u'Login failed']
         else:
-            pass  # Authentication failed, e.g. bad password
+            form.non_field_errors = [u'Usename and password incorrect']
 
     return render_template('user/login.html', form=form)
 
@@ -45,7 +44,7 @@ def reauth():
             confirm_login()
             return redirect(form.next.data or url_for('frontend.index'))
         else:
-            pass  # Password is wrong
+            form.non_field_errors = [u'Incorrect password']
 
     return render_template('user/reauth.html', form=form)
 

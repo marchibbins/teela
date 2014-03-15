@@ -39,6 +39,7 @@ def configure_extensions(app):
         return user_loader(id)
 
     login_manager.login_view = 'user.login'
+    login_manager.refresh_view = 'user.reauth'
     login_manager.setup_app(app)
 
 

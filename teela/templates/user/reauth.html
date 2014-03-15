@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Reauth</h3>
+
+    <form method="POST" action="{{ url_for('user.reauth') }}">
+        {{ form.hidden_tag() }}
+        <div>{{ form.password.label }} {{ form.password }}</div>
+        <input type="submit" value="Reauthenticate">
+    </form>
+{% endblock %}

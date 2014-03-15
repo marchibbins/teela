@@ -1,6 +1,6 @@
 from flask import Blueprint, request, redirect, render_template, url_for
-from flask.ext.login import current_user, login_required, login_user, logout_user
-from forms import LoginForm
+from flask.ext.login import confirm_login, current_user, login_required, login_user, logout_user
+from forms import LoginForm, ReauthForm
 from models import User
 
 
@@ -13,10 +13,11 @@ def login():
     if current_user.is_authenticated():
         return redirect(url_for('frontend.index'))
 
-    form = LoginForm(next=request.args.get('next', None))
+    form = LoginForm(next=request.args.get('next'))
 
     if form.validate_on_submit():
-        user, authenticated = User.authenticate(form.username.data, form.password.data)
+        user, authenticated = User.authenticate(form.username.data,
+                                                form.password.data)
 
         if user and authenticated:
             remember = request.form.get('remember') == 'y'
@@ -28,6 +29,25 @@ def login():
             pass  # Authentication failed, e.g. bad password
 
     return render_template('user/login.html', form=form)
+
+
+@user.route('/reauth', methods=['GET', 'POST'])
+@login_required
+def reauth():
+    """ """
+    form = ReauthForm(next=request.args.get('next'))
+
+    if form.validate_on_submit():
+        user, authenticated = User.authenticate(current_user.username,
+                                                form.password.data)
+
+        if user and authenticated:
+            confirm_login()
+            return redirect(form.next.data or url_for('frontend.index'))
+        else:
+            pass  # Password is wrong
+
+    return render_template('user/reauth.html', form=form)
 
 
 @user.route('/logout')

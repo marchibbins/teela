@@ -10,3 +10,8 @@ class LoginForm(Form):
     password = PasswordField(u'Password', [DataRequired()])
     remember = BooleanField(u'Remember me')
     next = HiddenField()
+
+
+class ReauthForm(Form):
+    password = PasswordField(u'Password', [DataRequired()])
+    next = HiddenField()

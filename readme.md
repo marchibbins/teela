@@ -7,6 +7,7 @@ A [Flask](http://flask.pocoo.org/) bootstrap and application skeleton with [twel
 - [Flask](http://flask.pocoo.org/) - Python Web framework
 - [Flask-SQLAlchemy](http://pythonhosted.org/Flask-SQLAlchemy) - Flask extension for [SQLAlchemy](http://www.sqlalchemy.org/)
 - [Flask-Login](https://github.com/maxcountryman/flask-login) - user session management
+- [Flask-WTF](https://flask-wtf.readthedocs.org/) - Flask integration with [WTForms](http://wtforms.readthedocs.org/)
 - [Flask-Cache](http://pythonhosted.org/Flask-Cache/) - Cache extension for Flask
 - [Flask-Script](http://flask-script.readthedocs.org/) - command-line tasks and scripts
 - [Gunicorn](http://gunicorn.org/) - WSGI HTTP server

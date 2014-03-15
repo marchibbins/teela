@@ -5,8 +5,9 @@ A [Flask](http://flask.pocoo.org/) bootstrap and application skeleton with [twel
 ### Dependencies
 
 - [Flask](http://flask.pocoo.org/) - Python Web framework
-- [Flask-Cache](http://pythonhosted.org/Flask-Cache/) - Cache extension for Flask
 - [Flask-SQLAlchemy](http://pythonhosted.org/Flask-SQLAlchemy) - Flask extension for [SQLAlchemy](http://www.sqlalchemy.org/)
+- [Flask-Login](https://github.com/maxcountryman/flask-login) - user session management
+- [Flask-Cache](http://pythonhosted.org/Flask-Cache/) - Cache extension for Flask
 - [Flask-Script](http://flask-script.readthedocs.org/) - command-line tasks and scripts
 - [Gunicorn](http://gunicorn.org/) - WSGI HTTP server
 - [Honcho](https://github.com/nickstenning/honcho) - a Python clone of [Foreman](http://ddollar.github.com/foreman/)

@@ -1,8 +1,9 @@
 Flask==0.10.1
+Flask-SQLAlchemy==1.0
+Flask-Login==0.2.10
 Flask-Cache==0.12
-Fabric==1.8.2
+Flask-Script==0.6.7
 gunicorn==18.0
 honcho==0.5.0
-Flask-SQLAlchemy==1.0
-Flask-Script==0.6.7
+Fabric==1.8.2
 ipython==1.2.1

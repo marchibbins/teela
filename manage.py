@@ -2,7 +2,8 @@ from flask.ext.script import Manager, Shell
 
 from teela import init
 from teela.extensions import db
-from teela.frontend import models
+from teela.frontend import models as frontend_models
+from teela.user import models as user_models
 
 app = init()
 manager = Manager(app)
@@ -21,9 +22,13 @@ def setup():
     db.create_all()
 
     # Example, otherwise required setup only
-    message = models.Message(text=u'Hello World.')
-
+    message = frontend_models.Message(text=u'Hello World.')
     db.session.add(message)
+
+    # Admin user
+    admin = user_models.User(name=u'admin')
+    db.session.add(admin)
+
     db.session.commit()
 
 
@@ -31,7 +36,7 @@ def setup():
 def make_shell_context():
     """ Configure shell setup. """
     # http://flask-script.readthedocs.org/en/latest/#default-commands
-    return dict(app=app, db=db, models=models)
+    return dict(app=app, db=db)
 
 
 if __name__ == "__main__":

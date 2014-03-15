@@ -34,3 +34,6 @@ class Config(object):
     # Flask-SQLAlchemy: http://packages.python.org/Flask-SQLAlchemy/config.html
     SQLALCHEMY_DATABASE_URI = env_var('SQLALCHEMY_DATABASE_URI', required=True)
     SQLALCHEMY_ECHO = env_var('SQLALCHEMY_ECHO', default=False)
+
+    # Flask-Login: http://flask.pocoo.org/docs/quickstart/#sessions
+    SECRET_KEY = env_var('SECRET_KEY', required=True)

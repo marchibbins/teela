@@ -1,5 +1,6 @@
-from teela.extensions import db
 from sqlalchemy import Column
+
+from teela.extensions import db
 
 
 class Message(db.Model):

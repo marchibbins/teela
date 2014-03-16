@@ -1,7 +1,10 @@
 from flask import Blueprint, request, redirect, render_template, url_for
-from flask.ext.login import confirm_login, current_user, login_required, login_user, logout_user
-from forms import LoginForm, ReauthForm
-from models import User
+from flask.ext.login import confirm_login, current_user, login_required, \
+    login_user, logout_user
+
+from teela.user.forms import LoginForm, ReauthForm
+from teela.user.models import User
+
 
 user = Blueprint('user', __name__, url_prefix='/user')
 

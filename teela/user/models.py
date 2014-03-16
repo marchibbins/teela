@@ -1,12 +1,13 @@
 from flask.ext.login import UserMixin
 from sqlalchemy import Column
-from teela.extensions import db
 from werkzeug import generate_password_hash, check_password_hash
+
+from teela.extensions import db
 
 
 class User(db.Model, UserMixin):
 
-    """ """
+    """ Basic User model, username and encrypted password. """
     id = Column(db.Integer, primary_key=True)
     username = Column(db.String(64), nullable=False, unique=True)
     password_store = Column('password', db.String(64), nullable=False)
@@ -23,11 +24,12 @@ class User(db.Model, UserMixin):
 
         return check_password_hash(self.password, password)
 
-    password = db.synonym('password_store', descriptor=property(get_password, set_password))
+    password = db.synonym('password_store',
+                          descriptor=property(get_password, set_password))
 
     @classmethod
     def authenticate(self, username, password):
-        """ """
+        """ Attempt User select by username and password match. """
         user = self.query.filter(User.username == username).first()
 
         if user:
@@ -39,5 +41,5 @@ class User(db.Model, UserMixin):
 
 
 def user_loader(id):
-    """ """
+    """ Method for LoginManager to reload a User object. """
     return User.query.get(id)

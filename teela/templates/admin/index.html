@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Admin home</h1>
+    <h1>Admin</h1>
+
+    {% block admin_content %}
+        <ol class="messages">
+            {% for message in messages %}
+            <li>{{ message.text }} (<a href="{{ url_for('admin.message', message_id=message.id) }}">edit</a>)</li>
+            {% endfor %}
+        </ol>
+    {% endblock %}
 {% endblock %}

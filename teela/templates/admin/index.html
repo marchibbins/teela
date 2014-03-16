@@ -4,10 +4,12 @@
     <h1>Admin</h1>
 
     {% block admin_content %}
+        {% if messages %}
         <ol class="messages">
             {% for message in messages %}
             <li>{{ message.text }} (<a href="{{ url_for('admin.message', message_id=message.id) }}">edit</a>)</li>
             {% endfor %}
         </ol>
+        {% endif %}
     {% endblock %}
 {% endblock %}

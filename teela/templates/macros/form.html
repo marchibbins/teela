@@ -4,7 +4,7 @@
     <dd>{{ field(**kwargs)|safe }}
 
         {% if field.errors %}
-        <ul>
+        <ul class="errors">
             {% for error in field.errors %}
             <li>{{ error }}</li>
             {% endfor %}
@@ -15,7 +15,7 @@
 
 {% macro render_form_errors(form) %}
     {% if form.non_field_errors %}
-        <ul>
+        <ul class="errors">
             {% for error in form.non_field_errors %}
             <li>{{ error }}</li>
             {% endfor %}

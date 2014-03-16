@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from config import Config
 
 from extensions import cache, db, login_manager
+from admin import admin
 from api import api
 from frontend import frontend
 from user import user, user_loader
@@ -45,6 +46,7 @@ def configure_extensions(app):
 
 def configure_blueprints(app):
     """ Configure blueprints. """
+    app.register_blueprint(admin)
     app.register_blueprint(api)
     app.register_blueprint(frontend)
     app.register_blueprint(user)

@@ -9,4 +9,4 @@ def index():
     """ Render a simple template. """
     message = Message.query.first()
 
-    return render_template('index.html', message=message)
+    return render_template('frontend/index.html', message=message)

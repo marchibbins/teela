@@ -10,7 +10,7 @@ user = Blueprint('user', __name__, url_prefix='/user')
 def login():
     """ """
     if current_user.is_authenticated():
-        return redirect(url_for('frontend.index'))
+        return redirect(url_for('admin.index'))
 
     form = LoginForm(next=request.args.get('next'))
 
@@ -21,7 +21,7 @@ def login():
         if user and authenticated:
             remember = request.form.get('remember') == 'y'
             if login_user(user, remember=remember):
-                return redirect(form.next.data or url_for('frontend.index'))
+                return redirect(form.next.data or url_for('admin.index'))
             else:
                 form.non_field_errors = [u'Login failed']
         else:
@@ -42,7 +42,7 @@ def reauth():
 
         if user and authenticated:
             confirm_login()
-            return redirect(form.next.data or url_for('frontend.index'))
+            return redirect(form.next.data or url_for('admin.index'))
         else:
             form.non_field_errors = [u'Incorrect password']
 

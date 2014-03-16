@@ -3,17 +3,16 @@
 {% from "macros/form.html" import render_field, render_form_errors %}
 
 {% block content %}
-    <h3>Login</h3>
+    <h1>Login</h1>
 
     <form method="POST" action="{{ url_for('user.login') }}">
         {{ render_form_errors(form) }}
-
         {{ form.hidden_tag() }}
-        <dl>
+        <ul>
             {{ render_field(form.username) }}
             {{ render_field(form.password) }}
             {{ render_field(form.remember) }}
-        </dl>
+        </ul>
         <input type="submit" value="Log in">
     </form>
 {% endblock %}

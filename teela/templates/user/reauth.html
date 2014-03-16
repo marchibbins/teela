@@ -3,16 +3,14 @@
 {% from "macros/form.html" import render_field, render_form_errors %}
 
 {% block content %}
-    <h3>Reauth</h3>
+    <h1>Reauthenticate</h1>
 
     <form method="POST" action="{{ url_for('user.reauth') }}">
         {{ render_form_errors(form) }}
-
         {{ form.hidden_tag() }}
-
-        <dl>
+        <ul>
             {{ render_field(form.password) }}
-        </dl>
+        </ul>
         <input type="submit" value="Reauthenticate">
     </form>
 {% endblock %}

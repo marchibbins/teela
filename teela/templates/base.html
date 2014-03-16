@@ -7,15 +7,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <div id="summary">
-        {% block summary %}
+    <div class="content">
+        {% block content %}
             <h1>It worked!</h1>
             <h2>Congratulations on your first Teela-powered page.</h2>
-        {% endblock %}
-    </div>
-    <div id="message">
-        {% block content %}
-            <p>Get going!</p>
+            
+            {% block message %}{% endblock %}
         {% endblock %}
     </div>
 </body>

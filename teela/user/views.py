@@ -1,4 +1,4 @@
-from flask import Blueprint, request, redirect, render_template, url_for
+from flask import Blueprint, flash, request, redirect, render_template, url_for
 from flask.ext.login import confirm_login, current_user, login_required, \
     login_user, logout_user
 
@@ -45,6 +45,7 @@ def reauth():
 
         if user and authenticated:
             confirm_login()
+            flash('Reauthentication complete.')
             return redirect(form.next.data or url_for('admin.index'))
         else:
             form.non_field_errors = [u'Incorrect password']
@@ -57,4 +58,5 @@ def reauth():
 def logout():
     """ """
     logout_user()
+    flash('You are now logged out.')
     return redirect(url_for('frontend.index'))

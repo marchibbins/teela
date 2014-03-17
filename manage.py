@@ -2,7 +2,7 @@ from flask.ext.script import Manager, Shell
 
 from teela import init
 from teela.extensions import db
-from teela.frontend import models as frontend_models
+from teela.example import models as example_models
 from teela.user import models as user_models
 
 app = init()
@@ -22,7 +22,7 @@ def setup():
     db.create_all()
 
     # Example, otherwise required setup only
-    message = frontend_models.Message(text=u'Hello World.')
+    message = example_models.Message(text=u'Hello World.')
     db.session.add(message)
 
     # Admin user

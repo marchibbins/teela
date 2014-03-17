@@ -1,9 +1,9 @@
 from flask import Blueprint, render_template
 from flask.ext.login import login_required
 
+from teela.example.forms import MessageForm
+from teela.example.models import Message
 from teela.extensions import db
-from teela.frontend.forms import MessageForm
-from teela.frontend.models import Message
 
 
 admin = Blueprint('admin', __name__, url_prefix='/admin')

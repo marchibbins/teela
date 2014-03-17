@@ -11,11 +11,13 @@
                 <th>{{ message.id }}.</td>
                 <td>{{ message.text }}</td>
                 <td>
-                    <a href="{{ url_for('admin.message', message_id=message.id) }}">Edit</a>
+                    <a href="{{ url_for('admin.message_edit', message_id=message.id) }}">Edit</a> |
+                    <a href="{{ url_for('admin.message_delete', message_id=message.id) }}">Delete</a>
                 </td>
             </tr>
             {% endfor %}
         </table>
         {% endif %}
+        <a href="{{ url_for('admin.message_add') }}">Add new message</a>
     {% endblock %}
 {% endblock %}

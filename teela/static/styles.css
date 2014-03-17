@@ -3,6 +3,7 @@ body { color: #333; font: small sans-serif; padding: 10px 20px; }
 h1, h2, h3 { font-weight: normal; }
 h1 { border-bottom: 1px solid #ddd; margin-bottom: 10px; }
 ul { list-style: none; }
+table { margin-bottom: 10px }
 th { min-width: 20px; }
 td { min-width: 100px; text-align: left }
 .message { margin: 10px 0; }

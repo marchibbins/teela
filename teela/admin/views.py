@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, flash, render_template
 from flask.ext.login import login_required
 
 from teela.example.forms import MessageForm
@@ -28,5 +28,6 @@ def message(message_id):
         form.populate_obj(message)
         db.session.add(message)
         db.session.commit()
+        flash('Message updated.', 'success')
 
     return render_template('admin/message.html', message=message, form=form)

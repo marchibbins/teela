@@ -7,3 +7,4 @@ ul { list-style: none; }
 .message { margin: 10px 0; }
 .errors { color: #de363a; }
 .alert { background-color: #eee; display: inline-block; margin-bottom: 10px; padding: 5px; }
+.alert-success { background-color: #9f9; }

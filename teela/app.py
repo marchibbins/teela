@@ -39,7 +39,9 @@ def configure_extensions(app):
     def load_user(id):
         return user_loader(id)
 
+    login_manager.login_message = u'Please log in to access this page.'
     login_manager.login_view = 'user.login'
+    login_manager.refresh_message = u'Please reauthenticate to access this page.'
     login_manager.refresh_view = 'user.reauth'
     login_manager.setup_app(app)
 

@@ -2,6 +2,10 @@
 
 A [Flask](http://flask.pocoo.org/) bootstrap and application skeleton with [twelve-factor](http://www.12factor.net/) principles.
 
+Bootstraps a typical Flask application with authentication, SQL database, forms and caching. Constructed of modular apps separating data modules, HTML-based views, JSON-based API responses and an authentication-protected admin interface.
+
+Includes an `example` model for the purpose of demonstration SQL querying and basic CRUD admin actions. Basic templates and static file structure also in place.
+
 ### Dependencies
 
 - [Flask](http://flask.pocoo.org/) - Python Web framework
@@ -33,7 +37,9 @@ A [Flask](http://flask.pocoo.org/) bootstrap and application skeleton with [twel
 
 Honcho adds the contents of `.env` file as environment variables. The application boostrap configures Flask using these settings, so edit this file as you please - see [Flask configuration](http://flask.pocoo.org/docs/config/).
 
-**Note:** Defaults are defined in [the config class](teela/config.py) for some settings, so you don't need to duplicate these in your `.env` if you want to keep it minimal. Currently `SERVER_NAME` (which is used to determine the application `HOST` and `PORT`) and `SQLALCHEMY_DATABASE_URI` are the only required settings.
+**Note:** Defaults are defined in [the config class](teela/config.py) for some settings, so you don't need to duplicate these in your `.env` if you want to keep it minimal. Currently `SERVER_NAME` (which is used to determine the application `HOST` and `PORT`), `SQLALCHEMY_DATABASE_URI` and `SECRET_KEY` are the only required settings.
+
+Obviously, `SECRET_KEY` should be something considerably stronger than the example.
 
 ### Running locally
 

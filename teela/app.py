@@ -1,11 +1,11 @@
 from flask import Flask, render_template
-from config import Config
 
-from extensions import cache, db, login_manager
-from admin import admin
-from api import api
-from frontend import frontend
-from user import user, user_loader
+from teela.admin import admin
+from teela.api import api
+from teela.config import Config
+from teela.extensions import cache, db, login_manager
+from teela.frontend import frontend
+from teela.user import user, user_loader
 
 
 def init():

@@ -39,3 +39,9 @@ def shell():
 def test():
     """ Run tests. """
     honcho_run('python test.py')
+
+
+@task
+def clean():
+    """ Delete pyc files. """
+    local('find . -name \*.pyc -delete')

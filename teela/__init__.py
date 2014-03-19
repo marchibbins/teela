@@ -1,1 +1,1 @@
-from app import init
+from teela.app import init

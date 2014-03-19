@@ -1,1 +1,1 @@
-from views import frontend
+from teela.frontend.views import frontend

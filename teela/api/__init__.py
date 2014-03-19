@@ -1,1 +1,1 @@
-from views import api
+from teela.api.views import api

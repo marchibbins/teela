@@ -1,2 +1,2 @@
-from models import user_loader
-from views import user
+from teela.user.models import user_loader
+from teela.user.views import user

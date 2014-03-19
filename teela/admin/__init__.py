@@ -1,1 +1,1 @@
-from views import admin
+from teela.admin.views import admin

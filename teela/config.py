@@ -27,6 +27,16 @@ class Config(object):
     DEBUG = env_var('DEBUG', default=False)
     SERVER_NAME = env_var('SERVER_NAME', required=True)
 
+    # Logging
+    LOG_FOLDER = env_var('LOG_FOLDER', default='logs')
+    if not os.path.exists(LOG_FOLDER):
+        os.mkdir(LOG_FOLDER)
+
+    LOG_NAME = env_var('LOG_NAME', default='info.log')
+    LOG_PATH = os.path.join(LOG_FOLDER, LOG_NAME)
+    LOG_MAX_BYTES = env_var('LOG_MAX_BYTES', default='info.log')
+    LOG_BACKUP_COUNT = env_var('LOG_BACKUP_COUNT', default='info.log')
+
     # Flask-Cache: http://pythonhosted.org/Flask-Cache/
     CACHE_TYPE = env_var('CACHE_TYPE', default='simple')
     CACHE_DEFAULT_TIMEOUT = env_var('CACHE_DEFAULT_TIMEOUT', default=60)

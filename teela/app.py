@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+from logging.handlers import RotatingFileHandler
+import logging
 
 from teela.admin import admin
 from teela.api import api
@@ -15,6 +17,7 @@ def init():
     configure_app(app)
     configure_extensions(app)
     configure_blueprints(app)
+    configure_logging(app)
     configure_error_handlers(app)
 
     return app
@@ -52,6 +55,21 @@ def configure_blueprints(app):
     app.register_blueprint(api)
     app.register_blueprint(frontend)
     app.register_blueprint(user)
+
+
+def configure_logging(app):
+    """ Configure logging. """
+    # Skip logging configuration for debug mode.
+    if app.debug:
+        return
+
+    # http://flask.pocoo.org/docs/errorhandling/
+    app.logger.setLevel(logging.INFO)
+
+    log_file_handler = RotatingFileHandler(Config.LOG_PATH, Config.LOG_MAX_BYTES, Config.LOG_BACKUP_COUNT)
+    log_file_handler.setLevel(logging.INFO)
+    log_file_handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
+    app.logger.addHandler(log_file_handler)
 
 
 def configure_error_handlers(app):

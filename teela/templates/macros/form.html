@@ -1,19 +1,42 @@
+{% macro render_form(form=None, action='', submit_value='Submit', cancel_url=None) %}
+    <form action="{{ action }}" method="POST">
+        <fieldset>
+            {% if form %}
+                {{ render_form_errors(form) }}
+                {{ form.hidden_tag() }}
+                <ul>
+                    {% for field in form if field.type != 'HiddenField' and field.type != 'CSRFTokenField' %}
+                        <li>{{ render_field(field) }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <div>
+                <input type="submit" value="{{ submit_value }}">
+                {% if cancel_url %}
+                    <a href="{{ cancel_url }}">Cancel</a>
+                {% endif %}
+            </div>
+        </fieldset>
+    </form>
+{% endmacro %}
 
 {% macro render_field(field) %}
-    <li>
-        {{ field.label }}
+    <div {% if field.errors %}class="error"{% endif %}>
+        <label for="{{ field.id }}">{{ field.label.text }} {% if field.flags.required %}*{% endif %}</label>
         <div>
             {{ field(**kwargs)|safe }}
-
+            {% if field.description %}
+                <p>{{ field.description }}</p>
+            {% endif %}
             {% if field.errors %}
-            <ul class="errors">
-                {% for error in field.errors %}
-                <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
+                <ul class="errors">
+                    {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
             {% endif %}
         </div>
-    </li>
+    </div>
 {% endmacro %}
 
 {% macro render_form_errors(form) %}

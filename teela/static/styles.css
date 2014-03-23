@@ -6,6 +6,7 @@ ul { list-style: none; }
 table { margin-bottom: 10px }
 th { min-width: 20px; }
 td { min-width: 100px; text-align: left }
+fieldset { border: none; }
 .message { margin: 10px 0; }
 .errors { color: #de363a; }
 .alert { background-color: #eee; display: inline-block; margin-bottom: 10px; padding: 5px; }

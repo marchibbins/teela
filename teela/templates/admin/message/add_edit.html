@@ -1,17 +1,10 @@
 {% extends 'admin/index.html' %}
 
-{% from "macros/form.html" import render_field, render_form_errors %}
+{% from 'macros/form.html' import render_form %}
 
 {% block admin_content %}
     <h2>{{ title }}</h2>
 
-    <form method="POST">
-        {{ render_form_errors(form) }}
-        {{ form.hidden_tag() }}
-        <ul>
-            {{ render_field(form.text) }}
-        </ul>
-        <input type="submit" value="Save message">
-    </form>
+    {{ render_form(form, submit_value='Save message', cancel_url=url_for('admin.index')) }}
 </div>
 {% endblock %}

@@ -1,12 +1,10 @@
 {% extends 'admin/index.html' %}
 
-{% from "macros/form.html" import render_field, render_form_errors %}
+{% from 'macros/form.html' import render_form %}
 
 {% block admin_content %}
     <h2>Delete message '{{ message.text }}'?</h2>
 
-    <form method="POST">
-        <input type="submit" value="Confirm">
-    </form>
+    {{ render_form(submit_value='Confirm', cancel_url=url_for('admin.index')) }}
 </div>
 {% endblock %}

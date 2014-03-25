@@ -60,7 +60,7 @@ def configure_blueprints(app):
 def configure_logging(app):
     """ Configure logging. """
     # Skip logging configuration for debug mode.
-    if app.debug:
+    if app.debug or not app.config['FILE_LOGGING']:
         return
 
     # http://flask.pocoo.org/docs/errorhandling/
@@ -69,6 +69,7 @@ def configure_logging(app):
     log_file_handler = RotatingFileHandler(Config.LOG_PATH, Config.LOG_MAX_BYTES, Config.LOG_BACKUP_COUNT)
     log_file_handler.setLevel(logging.INFO)
     log_file_handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
+
     app.logger.addHandler(log_file_handler)
 
 

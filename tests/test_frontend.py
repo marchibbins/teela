@@ -16,6 +16,12 @@ class FrontendTests(unittest.TestCase):
         self.assertTrue(rv.data)
         self.assertEqual(rv.status_code, 200)
 
+    def test_favicon(self):
+        rv = self.app.get('/static/favicon.ico')
+        self.assertTrue(rv.data)
+        self.assertEqual(rv.status_code, 200)
+        rv.close()
+
     def test_generic_404(self):
         """ Tests that missing frontend route returns 404. """
         rv = self.app.get('/404/')
